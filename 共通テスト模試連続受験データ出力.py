@@ -12,12 +12,9 @@ cdata = pd.merge(data, studentinfo, on='受験番号', how='left')
 cdata.to_csv('C:/Users/kaika/OneDrive/デスクトップ/-Git/01TestDataCheck/file4.csv',index=False,mode = 'w',encoding="cp932")
 
 
-cdata['在卒高校コード'] = cdata['在卒高校コード'].fillna(cdata['学校コード']).astype(str)
-cdata['高校名'] = cdata['高校名'].fillna(cdata['学校名']).astype(str)
-print(cdata.columns.get_loc('在卒高校コード'))
-print(cdata.columns.get_loc('学校コード'))
-print(cdata.columns.get_loc('高校名'))
-print(cdata.columns.get_loc('学校名'))
+cdata['在卒高校コード'] = cdata['学校コード'].astype(str)
+cdata['高校名'] = cdata['学校名'].astype(str)
+
 cdata.to_csv('C:/Users/kaika/OneDrive/デスクトップ/-Git/01TestDataCheck/file5.csv',index=False,mode = 'w',encoding="cp932")
 
 
